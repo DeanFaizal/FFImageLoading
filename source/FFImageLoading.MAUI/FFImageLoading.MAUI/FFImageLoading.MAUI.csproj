@@ -1,40 +1,42 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
 		<!-- iOS, Android, MacCatalyst -->
 		<TargetFrameworks>net6.0-ios;net6.0-android;net6.0-maccatalyst</TargetFrameworks>
-		<OutputType>Exe</OutputType>
+    <AssemblyName>FFImageLoading.MAUI</AssemblyName>
+		<OutputType>Dll</OutputType>
 		<UseMaui>true</UseMaui>
 		<SingleProject>true</SingleProject>
-		<RootNamespace>Simple.Maui.Sample</RootNamespace>
+    <LangVersion>Latest</LangVersion>
 
 		<!-- Display name -->
-		<ApplicationTitle>Simple.Maui.Sample</ApplicationTitle>
+		<!--<ApplicationTitle>FFImageLoading.MAUI</ApplicationTitle>-->
 
 		<!-- App Identifier -->
-		<ApplicationId>com.companyname.Simple.Maui.Sample</ApplicationId>
+		<!--<ApplicationId>com.companyname.FFImageLoading.MAUI</ApplicationId>-->
 
 		<!-- Versions -->
-		<ApplicationVersion>1.0</ApplicationVersion>
-		<AndroidVersionCode>1</AndroidVersionCode>
+		<!--<ApplicationVersion>1.0</ApplicationVersion>
+		<AndroidVersionCode>1</AndroidVersionCode>-->
+    <AssemblyVersion>0.0.1</AssemblyVersion>
 	</PropertyGroup>
 
 	<ItemGroup>
 		<!-- App Icon -->
-		<MauiImage Include="Resources\appicon.svg" ForegroundFile="Resources\appiconfg.svg" IsAppIcon="true" Color="#512BD4" />
+		<!--<MauiImage
+			Include="Resources\appicon.svg"
+			ForegroundFile="Resources\appiconfg.svg"
+			IsAppIcon="true"
+			Color="#512BD4" />-->
 
 		<!-- Splash Screen -->
-		<MauiSplashScreen Include="Resources\appiconfg.svg" Color="#512BD4" />
+		<!--<MauiSplashScreen Include="Resources\appiconfg.svg" Color="#512BD4" />-->
 
 		<!-- Images -->
-		<MauiImage Include="Resources\Images\*" />
+		<!--<MauiImage Include="Resources\Images\*" />-->
 
 		<!-- Custom Fonts -->
-		<MauiFont Include="Resources\Fonts\*" />
-	</ItemGroup>
-
-	<ItemGroup>
-	  <ProjectReference Include="..\..\source\FFImageLoading.Common\FFImageLoading.csproj" />
+		<!--<MauiFont Include="Resources\Fonts\*" />-->
 	</ItemGroup>
 
 	<PropertyGroup>
