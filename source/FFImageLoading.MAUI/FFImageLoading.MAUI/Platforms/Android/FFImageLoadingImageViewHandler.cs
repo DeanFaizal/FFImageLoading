@@ -1,23 +1,25 @@
 ﻿using System;
 using System.Threading;
 using System.Threading.Tasks;
-using FFImageLoading.Work;
+//using FFImageLoading.Work;
 using Android.Widget;
-using FFImageLoading.Forms.Handlers;
-using Xamarin.Forms.Platform.Android;
+using FFImageLoading.MAUI.Handlers;
+using FFImageLoading.Work;
+using Microsoft.Maui.Controls;
+using Microsoft.Maui.Controls.Compatibility.Platform.Android;
 
-//[assembly: Xamarin.Forms.ExportImageSourceHandler(typeof(Xamarin.Forms.FileImageSource), typeof(FFImageLoading.Forms.Platform.FFImageLoadingImageViewHandler))]
-//[assembly: Xamarin.Forms.ExportImageSourceHandler(typeof(Xamarin.Forms.StreamImageSource), typeof(FFImageLoading.Forms.Platform.FFImageLoadingImageViewHandler))]
-//[assembly: Xamarin.Forms.ExportImageSourceHandler(typeof(Xamarin.Forms.UriImageSource), typeof(FFImageLoading.Forms.Platform.FFImageLoadingImageViewHandler))]
-//[assembly: Xamarin.Forms.ExportImageSourceHandler(typeof(FFImageLoading.Forms.EmbeddedResourceImageSource), typeof(FFImageLoading.Forms.Platform.FFImageLoadingImageViewHandler))]
-//[assembly: Xamarin.Forms.ExportImageSourceHandler(typeof(FFImageLoading.Forms.DataUrlImageSource), typeof(FFImageLoading.Forms.Platform.FFImageLoadingImageViewHandler))]
+//[assembly: Xamarin.Forms.ExportImageSourceHandler(typeof(Xamarin.Forms.FileImageSource), typeof(FFImageLoading.MAUI.Platform.FFImageLoadingImageViewHandler))]
+//[assembly: Xamarin.Forms.ExportImageSourceHandler(typeof(Xamarin.Forms.StreamImageSource), typeof(FFImageLoading.MAUI.Platform.FFImageLoadingImageViewHandler))]
+//[assembly: Xamarin.Forms.ExportImageSourceHandler(typeof(Xamarin.Forms.UriImageSource), typeof(FFImageLoading.MAUI.Platform.FFImageLoadingImageViewHandler))]
+//[assembly: Xamarin.Forms.ExportImageSourceHandler(typeof(FFImageLoading.MAUI.EmbeddedResourceImageSource), typeof(FFImageLoading.MAUI.Platform.FFImageLoadingImageViewHandler))]
+//[assembly: Xamarin.Forms.ExportImageSourceHandler(typeof(FFImageLoading.MAUI.DataUrlImageSource), typeof(FFImageLoading.MAUI.Platform.FFImageLoadingImageViewHandler))]
 
-namespace FFImageLoading.Forms.Platform
+namespace FFImageLoading.MAUI.Platform
 {
 	[Preserve(AllMembers = true)]
 	public class FFImageLoadingImageViewHandler : HandlerBase<ImageView>, IImageViewHandler
 	{
-		public Task LoadImageAsync(Xamarin.Forms.ImageSource imageSource, ImageView imageView, CancellationToken cancellationToken = default)
+		public Task LoadImageAsync(Microsoft.Maui.Controls.ImageSource imageSource, ImageView imageView, CancellationToken cancellationToken = default)
 		{
 			try
 			{
@@ -43,9 +45,9 @@ namespace FFImageLoading.Forms.Platform
 		{
 			if (imageView == null || imageView.Handle == IntPtr.Zero)
 				return false;
-				
+
 #pragma warning disable CS0618 // Type or member is obsolete
-			var activity = imageView.Context as Android.App.Activity ?? (Android.App.Activity)Xamarin.Forms.Forms.Context;
+			var activity = imageView.Context as Android.App.Activity ?? (Android.App.Activity)Microsoft.Maui.MauiApplication.Context;
 #pragma warning restore CS0618 // Type or member is obsolete
 			if (activity != null)
 			{

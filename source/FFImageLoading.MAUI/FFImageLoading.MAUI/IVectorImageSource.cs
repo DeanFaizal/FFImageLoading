@@ -1,15 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using FFImageLoading.Work;
+using Microsoft.Maui.Controls;
 
-namespace FFImageLoading.Forms
+namespace FFImageLoading.MAUI
 {
     [Preserve(AllMembers = true)]
 	public interface IVectorImageSource
 	{
 		IVectorDataResolver GetVectorDataResolver();
 
-		Xamarin.Forms.ImageSource ImageSource { get; }
+		Microsoft.Maui.Controls.ImageSource ImageSource { get; }
 
 		int VectorWidth { get; set; }
 

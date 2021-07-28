@@ -73,7 +73,7 @@ namespace FFImageLoading
             return new SimpleDiskCache(configuration.DiskCachePath, configuration);
         }
 
-        internal static IImageLoaderTask CreateTask<TImageView>(TaskParameter parameters, ITarget<SelfDisposingBitmapDrawable, TImageView> target) where TImageView : class
+        public static IImageLoaderTask CreateTask<TImageView>(TaskParameter parameters, ITarget<SelfDisposingBitmapDrawable, TImageView> target) where TImageView : class
         {
             return new PlatformImageLoaderTask<TImageView>(target, parameters, Instance);
         }

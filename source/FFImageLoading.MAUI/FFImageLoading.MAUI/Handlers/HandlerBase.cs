@@ -2,18 +2,20 @@
 using System.Threading;
 using System.Threading.Tasks;
 using FFImageLoading.Work;
+using Microsoft.Maui.Controls;
+using ImageSource = FFImageLoading.Work.ImageSource;
 
-namespace FFImageLoading.Forms.Handlers
+namespace FFImageLoading.MAUI.Handlers
 {
 	public abstract class HandlerBase<TNativeView>
 	{
-		protected virtual Task<IImageLoaderTask> LoadImageAsync(IImageSourceBinding binding, Xamarin.Forms.ImageSource imageSource, TNativeView imageView, CancellationToken cancellationToken)
+		protected virtual Task<IImageLoaderTask> LoadImageAsync(IImageSourceBinding binding, Microsoft.Maui.Controls.ImageSource imageSource, TNativeView imageView, CancellationToken cancellationToken)
 		{
 			TaskParameter parameters = default;
 
 			if (binding.ImageSource == ImageSource.Url)
 			{
-				var urlSource = (Xamarin.Forms.UriImageSource)((imageSource as IVectorImageSource)?.ImageSource ?? imageSource);
+				var urlSource = (UriImageSource)((imageSource as IVectorImageSource)?.ImageSource ?? imageSource);
 				parameters = ImageService.Instance.LoadUrl(binding.Path, urlSource.CacheValidity);
 
 				if (!urlSource.CachingEnabled)

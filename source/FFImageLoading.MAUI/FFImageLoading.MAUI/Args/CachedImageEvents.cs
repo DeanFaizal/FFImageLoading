@@ -1,7 +1,7 @@
 ﻿using System;
 using FFImageLoading.Work;
 
-namespace FFImageLoading.Forms
+namespace FFImageLoading.MAUI
 {
     public static class CachedImageEvents
     {

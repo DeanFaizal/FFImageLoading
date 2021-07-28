@@ -1,6 +1,7 @@
-using Xamarin.Forms;
+﻿using Microsoft.Maui;using Microsoft.Maui.Controls;
+using Microsoft.Maui.Graphics;
 
-namespace FFImageLoading.Forms
+namespace FFImageLoading.MAUI
 {
     public static class ColorExtensions
     {
@@ -8,9 +9,9 @@ namespace FFImageLoading.Forms
         {
             // Information can be found here: https://developer.android.com/reference/android/graphics/ColorMatrix.html
 
-            var r = (float)color.R;
-            var g = (float)color.G;
-            var b = (float)color.B;
+            var r = (float)color.Red;
+            var g = (float)color.Green;
+            var b = (float)color.Blue;
 
             var rBrightness = brightness == null ? -r / 2 : brightness.Value;
             var gBrightness = brightness == null ? -g / 2 : brightness.Value;

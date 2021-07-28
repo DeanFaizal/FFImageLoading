@@ -3,17 +3,18 @@ using System.Threading;
 using System.Threading.Tasks;
 using Android.Content;
 using Android.Graphics;
-using Xamarin.Forms;
-using Xamarin.Forms.Platform.Android;
-using FFImageLoading.Forms.Handlers;
+using Microsoft.Maui;using Microsoft.Maui.Controls;
+using FFImageLoading.MAUI.Handlers;
 using FFImageLoading.Work;
 using FFImageLoading.Targets;
+using Microsoft.Maui.Controls.Compatibility.Platform.Android;
+using ImageSource = Microsoft.Maui.Controls.ImageSource;
 
-namespace FFImageLoading.Forms.Platform
+namespace FFImageLoading.MAUI.Platform
 {
 	public class FFImageLoadingImageSourceHandler : HandlerBase<Context>, IImageSourceHandler
 	{
-		public async Task<Bitmap> LoadImageAsync(Xamarin.Forms.ImageSource imageSource, Context context, CancellationToken cancellationToken = default)
+		public async Task<Bitmap> LoadImageAsync(ImageSource imageSource, Context context, CancellationToken cancellationToken = default)
 		{
 			try
 			{
@@ -42,7 +43,7 @@ namespace FFImageLoading.Forms.Platform
 				return false;
 
 #pragma warning disable CS0618 // Type or member is obsolete
-			var activity = context as Android.App.Activity ?? (Android.App.Activity)Xamarin.Forms.Forms.Context;
+			var activity = context as Android.App.Activity ?? (Android.App.Activity)Microsoft.Maui.MauiApplication.Context;
 #pragma warning restore CS0618 // Type or member is obsolete
 			if (activity != null)
 			{

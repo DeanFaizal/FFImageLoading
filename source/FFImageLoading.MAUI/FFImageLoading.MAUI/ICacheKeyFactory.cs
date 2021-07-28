@@ -1,7 +1,7 @@
 ﻿using System;
-using Xamarin.Forms;
+using Microsoft.Maui;using Microsoft.Maui.Controls;
 
-namespace FFImageLoading.Forms
+namespace FFImageLoading.MAUI
 {
     [Preserve(AllMembers = true)]
 	public interface ICacheKeyFactory

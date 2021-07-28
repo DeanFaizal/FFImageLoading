@@ -1,49 +1,65 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-	<PropertyGroup>
-		<!-- iOS, Android, MacCatalyst -->
-		<TargetFrameworks>net6.0-ios;net6.0-android;net6.0-maccatalyst</TargetFrameworks>
+  <PropertyGroup>
+    <!-- iOS, Android, MacCatalyst -->
+    <TargetFrameworks>net6.0-android</TargetFrameworks>
+    <!--;net6.0-ios;net6.0-maccatalyst-->
     <AssemblyName>FFImageLoading.MAUI</AssemblyName>
-		<OutputType>Dll</OutputType>
-		<UseMaui>true</UseMaui>
-		<SingleProject>true</SingleProject>
+    <OutputType>library</OutputType>
+    <UseMaui>true</UseMaui>
+    <SingleProject>true</SingleProject>
     <LangVersion>Latest</LangVersion>
 
-		<!-- Display name -->
-		<!--<ApplicationTitle>FFImageLoading.MAUI</ApplicationTitle>-->
+    <!-- Display name -->
+    <!--<ApplicationTitle>FFImageLoading.MAUI</ApplicationTitle>-->
 
-		<!-- App Identifier -->
-		<!--<ApplicationId>com.companyname.FFImageLoading.MAUI</ApplicationId>-->
+    <!-- App Identifier -->
+    <!--<ApplicationId>com.companyname.FFImageLoading.MAUI</ApplicationId>-->
 
-		<!-- Versions -->
-		<!--<ApplicationVersion>1.0</ApplicationVersion>
+    <!-- Versions -->
+    <!--<ApplicationVersion>1.0</ApplicationVersion>
 		<AndroidVersionCode>1</AndroidVersionCode>-->
     <AssemblyVersion>0.0.1</AssemblyVersion>
-	</PropertyGroup>
+  </PropertyGroup>
 
-	<ItemGroup>
-		<!-- App Icon -->
-		<!--<MauiImage
-			Include="Resources\appicon.svg"
-			ForegroundFile="Resources\appiconfg.svg"
-			IsAppIcon="true"
-			Color="#512BD4" />-->
+  <PropertyGroup>
+    <InvariantGlobalization Condition="$(TargetFramework.Contains('-maccatalyst'))">true</InvariantGlobalization>
+    <RuntimeIdentifier Condition="$(TargetFramework.Contains('-ios'))">iossimulator-x64</RuntimeIdentifier>
+    <RuntimeIdentifier Condition="$(TargetFramework.Contains('-maccatalyst'))">maccatalyst-x64</RuntimeIdentifier>
+    <UseInterpreter Condition="$(TargetFramework.Contains('-android'))">False</UseInterpreter>
+  </PropertyGroup>
 
-		<!-- Splash Screen -->
-		<!--<MauiSplashScreen Include="Resources\appiconfg.svg" Color="#512BD4" />-->
+  <ItemGroup>
+    <AtlasTexture Remove="Platforms\iOS - Copy\**" />
+    <BundleResource Remove="Platforms\iOS - Copy\**" />
+    <Compile Remove="Platforms\iOS - Copy\**" />
+    <CoreMLModel Remove="Platforms\iOS - Copy\**" />
+    <EmbeddedResource Remove="Platforms\iOS - Copy\**" />
+    <ImageAsset Remove="Platforms\iOS - Copy\**" />
+    <InterfaceDefinition Remove="Platforms\iOS - Copy\**" />
+    <MauiCss Remove="Platforms\iOS - Copy\**" />
+    <MauiXaml Remove="Platforms\iOS - Copy\**" />
+    <Metal Remove="Platforms\iOS - Copy\**" />
+    <None Remove="Platforms\iOS - Copy\**" />
+    <SceneKitAsset Remove="Platforms\iOS - Copy\**" />
+  </ItemGroup>
 
-		<!-- Images -->
-		<!--<MauiImage Include="Resources\Images\*" />-->
+  <ItemGroup>
+    <ProjectReference Include="..\..\FFImageLoading.Common\FFImageLoading.csproj" />
+    <ProjectReference Include="..\..\FFImageLoading.Droid\FFImageLoading.Droid.csproj" />
+  </ItemGroup>
 
-		<!-- Custom Fonts -->
-		<!--<MauiFont Include="Resources\Fonts\*" />-->
-	</ItemGroup>
+  <ItemGroup>
+    <_MauiCompileToAdd Remove="Platforms\iOS - Copy\**" />
+  </ItemGroup>
 
-	<PropertyGroup>
-		<InvariantGlobalization Condition="$(TargetFramework.Contains('-maccatalyst'))">true</InvariantGlobalization>
-		<RuntimeIdentifier Condition="$(TargetFramework.Contains('-ios'))">iossimulator-x64</RuntimeIdentifier>
-		<RuntimeIdentifier Condition="$(TargetFramework.Contains('-maccatalyst'))">maccatalyst-x64</RuntimeIdentifier>
-		<UseInterpreter Condition="$(TargetFramework.Contains('-android'))">False</UseInterpreter>
-	</PropertyGroup>
+  <ItemGroup>
+    <_MauiXamlToRemove Remove="Platforms\iOS - Copy\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Platforms\iOS\" />
+    <Folder Include="Platforms\MacCatalyst\" />
+  </ItemGroup>
 
 </Project>

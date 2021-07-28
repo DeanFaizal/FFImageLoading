@@ -1,18 +1,20 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
 		<!-- iOS, Android, MacCatalyst -->
-		<TargetFrameworks>net6.0-ios;net6.0-android;net6.0-maccatalyst</TargetFrameworks>
-		<OutputType>Exe</OutputType>
+		<TargetFrameworks>net6.0-android</TargetFrameworks><!--;net6.0-ios;net6.0-maccatalyst-->
+    <OutputType>Exe</OutputType>
 		<UseMaui>true</UseMaui>
 		<SingleProject>true</SingleProject>
+    <LangVersion>Latest</LangVersion>
+    
 		<RootNamespace>Simple.Maui.Sample</RootNamespace>
 
 		<!-- Display name -->
 		<ApplicationTitle>Simple.Maui.Sample</ApplicationTitle>
 
 		<!-- App Identifier -->
-		<ApplicationId>com.companyname.Simple.Maui.Sample</ApplicationId>
+		<ApplicationId>com.mobcat.Simple.Maui.Sample</ApplicationId>
 
 		<!-- Versions -->
 		<ApplicationVersion>1.0</ApplicationVersion>
@@ -35,6 +37,7 @@
 
 	<ItemGroup>
 	  <ProjectReference Include="..\..\source\FFImageLoading.Common\FFImageLoading.csproj" />
+	  <ProjectReference Include="..\..\source\FFImageLoading.MAUI\FFImageLoading.MAUI\FFImageLoading.MAUI.csproj" />
 	</ItemGroup>
 
 	<PropertyGroup>

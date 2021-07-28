@@ -5,7 +5,7 @@ using Android.Util;
 using Android.Graphics.Drawables;
 using Android.Widget;
 
-namespace FFImageLoading.Forms.Platform
+namespace FFImageLoading.MAUI.Platform
 {
     [Preserve(AllMembers = true)]
     public class CachedImageView : ImageView

@@ -4,7 +4,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using FFImageLoading.Work;
 
-namespace FFImageLoading.Forms
+namespace FFImageLoading.MAUI
 {
     [Preserve(AllMembers = true)]
     public interface IImageSourceBinding

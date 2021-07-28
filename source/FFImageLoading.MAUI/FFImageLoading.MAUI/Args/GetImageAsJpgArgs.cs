@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace FFImageLoading.Forms.Args
+namespace FFImageLoading.MAUI.Args
 {
 	public class GetImageAsJpgArgs
 	{

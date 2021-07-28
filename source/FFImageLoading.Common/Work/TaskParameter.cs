@@ -575,7 +575,7 @@ namespace FFImageLoading.Work
         /// </summary>
         /// <returns>The TaskParameter instance for chaining the call.</returns>
         /// <param name="action">Action.</param>
-        internal TaskParameter LoadingPlaceholderSet(Action action)
+        public TaskParameter LoadingPlaceholderSet(Action action)
         {
             OnLoadingPlaceholderSet = action ?? throw new ArgumentNullException(nameof(action));
             return this;

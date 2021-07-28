@@ -1,17 +1,16 @@
 ﻿using Android.Widget;
 using System;
 using System.ComponentModel;
-using Xamarin.Forms;
-using Xamarin.Forms.Platform.Android;
+using Microsoft.Maui;using Microsoft.Maui.Controls;
 using FFImageLoading.Work;
-using FFImageLoading.Forms.Platform;
-using FFImageLoading.Forms;
+using FFImageLoading.MAUI.Platform;
+using FFImageLoading.MAUI;
 using Android.Runtime;
 using Android.Graphics.Drawables;
 using Android.Graphics;
 using System.IO;
 using System.Threading.Tasks;
-using FFImageLoading.Forms.Args;
+using FFImageLoading.MAUI.Args;
 using FFImageLoading.Helpers;
 using FFImageLoading.Views;
 using Android.Views;
@@ -19,8 +18,12 @@ using System.Reflection;
 using Android.Content;
 using Android.OS;
 using AView = Android.Views.View;
+using Microsoft.Maui.Controls.Compatibility.Platform.Android;
+using Microsoft.Maui.Controls.Platform;
+using Microsoft.Maui.Graphics;
+using Color = Microsoft.Maui.Graphics.Color;
 
-namespace FFImageLoading.Forms.Platform
+namespace FFImageLoading.MAUI.Platform
 {
     /// <summary>
     /// CachedImage Implementation
@@ -40,10 +43,10 @@ namespace FFImageLoading.Forms.Platform
         private readonly CachedImageRenderer.MotionEventHelper _motionEventHelper = new CachedImageRenderer.MotionEventHelper();
         private readonly object _updateBitmapLock = new object();
 
-        [Obsolete("This constructor is obsolete as of version 2.5. Please use CachedImageFastRenderer(Context) instead.")]
-        public CachedImageFastRenderer() : base(Xamarin.Forms.Forms.Context)
-        {
-        }
+        //[Obsolete("This constructor is obsolete as of version 2.5. Please use CachedImageFastRenderer(Context) instead.")]
+        //public CachedImageFastRenderer() : base(Xamarin.Forms.Forms.Context)
+        //{
+        //}
 
         public CachedImageFastRenderer(IntPtr javaReference, JniHandleOwnership transfer) : base(javaReference, transfer)
         {
@@ -82,9 +85,9 @@ namespace FFImageLoading.Forms.Platform
                     {
                         TypedElement.PropertyChanged -= OnElementPropertyChanged;
 
-                        if (Xamarin.Forms.Platform.Android.Platform.GetRenderer(TypedElement) == this)
+						if (TypedElement.GetRenderer() == this)
                         {
-                            Xamarin.Forms.Platform.Android.Platform.SetRenderer(TypedElement, null);
+							Microsoft.Maui.Controls.Compatibility.Platform.Android.Platform.SetRenderer(TypedElement, null);
                         }
                     }
                 }
@@ -201,7 +204,7 @@ namespace FFImageLoading.Forms.Platform
 
         AView IVisualElementRenderer.View => this;
 
-        ViewGroup IVisualElementRenderer.ViewGroup => null;
+        //ViewGroup IVisualElementRenderer.ViewGroup => null;
 
         CachedImageView Control => this;
 
@@ -226,7 +229,7 @@ namespace FFImageLoading.Forms.Platform
             ElementPropertyChanged?.Invoke(this, e);
         }
 
-        private void SetBackgroundColor(Xamarin.Forms.Color color)
+        private void SetBackgroundColor(Color color)
         {
             Control?.SetBackgroundColor(color.ToAndroid());
         }

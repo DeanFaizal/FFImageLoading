@@ -1,11 +1,11 @@
 ﻿using System;
-using Xamarin.Forms;
+using Microsoft.Maui;using Microsoft.Maui.Controls;
 using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
 using Android.Runtime;
 
-namespace FFImageLoading.Forms.Platform
+namespace FFImageLoading.MAUI.Platform
 {
     [Preserve(AllMembers = true)]
     internal class ImageSourceBinding : IImageSourceBinding

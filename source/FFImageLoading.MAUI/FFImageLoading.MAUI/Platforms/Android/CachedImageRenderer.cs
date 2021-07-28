@@ -1,24 +1,25 @@
 ﻿using Android.Widget;
 using System;
 using System.ComponentModel;
-using Xamarin.Forms;
-using Xamarin.Forms.Platform.Android;
+using Microsoft.Maui;using Microsoft.Maui.Controls;
 using FFImageLoading.Work;
-using FFImageLoading.Forms.Platform;
-using FFImageLoading.Forms;
+using FFImageLoading.MAUI.Platform;
+using FFImageLoading.MAUI;
 using Android.Runtime;
 using Android.Graphics.Drawables;
 using Android.Graphics;
 using System.IO;
 using System.Threading.Tasks;
-using FFImageLoading.Forms.Args;
+using FFImageLoading.MAUI.Args;
 using FFImageLoading.Helpers;
 using FFImageLoading.Views;
 using Android.Views;
 using System.Reflection;
 using Android.Content;
+using Microsoft.Maui.Controls.Compatibility.Platform.Android;
+using Microsoft.Maui.Controls.Platform;
 
-namespace FFImageLoading.Forms.Platform
+namespace FFImageLoading.MAUI.Platform
 {
     /// <summary>
     /// CachedImage Implementation
@@ -91,12 +92,12 @@ namespace FFImageLoading.Forms.Platform
         private static readonly MethodInfo _platformDefaultRendererTypeNotifyFakeHandling = _platformDefaultRendererType?.GetMethod("NotifyFakeHandling", BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Public);
         private readonly object _updateBitmapLock = new object();
 
-        [Obsolete("This constructor is obsolete as of version 2.5. Please use CachedImageRenderer(Context) instead.")]
-        public CachedImageRenderer() : base(Xamarin.Forms.Forms.Context)
-        {
-        }
+		//[Obsolete("This constructor is obsolete as of version 2.5. Please use CachedImageRenderer(Context) instead.")]
+		//public CachedImageRenderer() : base(Xamarin.Forms.Forms.Context)
+		//{
+		//}
 
-        public CachedImageRenderer(IntPtr javaReference, JniHandleOwnership transfer) : this()
+		public CachedImageRenderer(IntPtr javaReference, JniHandleOwnership transfer) : this(MauiApplication.Context)
         {
         }
 

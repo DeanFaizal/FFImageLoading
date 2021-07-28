@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Globalization;
-using Xamarin.Forms;
+using Microsoft.Maui;using Microsoft.Maui.Controls;
 
-namespace FFImageLoading.Forms
+namespace FFImageLoading.MAUI
 {
     [Preserve(AllMembers = true)]
     public class ImageSourceConverter : TypeConverter, IValueConverter

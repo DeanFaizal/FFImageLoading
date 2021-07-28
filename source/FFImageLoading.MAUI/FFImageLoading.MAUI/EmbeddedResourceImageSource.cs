@@ -1,8 +1,8 @@
 ﻿using System;
-using Xamarin.Forms;
+using Microsoft.Maui;using Microsoft.Maui.Controls;
 using System.Reflection;
 
-namespace FFImageLoading.Forms
+namespace FFImageLoading.MAUI
 {
     /// <summary>
     /// Embedded resource image source.

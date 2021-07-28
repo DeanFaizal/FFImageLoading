@@ -1,16 +1,18 @@
 ﻿using System;
-using Xamarin.Forms;
+using Microsoft.Maui;using Microsoft.Maui.Controls;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using FFImageLoading.Forms.Args;
+using FFImageLoading.MAUI.Args;
 using System.Windows.Input;
 using FFImageLoading.Cache;
 using System.Reflection;
+using Microsoft.Maui.Essentials;
+using Microsoft.Maui.Graphics;
 
-namespace FFImageLoading.Forms
+namespace FFImageLoading.MAUI
 {
 	[Preserve(AllMembers = true)]
-	[RenderWith(typeof(Platform.CachedImageRenderer._CachedImageRenderer))]
+	[RenderWith(typeof(FFImageLoading.MAUI.Platform.CachedImageRenderer._CachedImageRenderer))]
 	/// <summary>
 	/// CachedImage by Daniel Luberda
 	/// </summary>
