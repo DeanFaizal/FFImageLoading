@@ -12,7 +12,7 @@ using Microsoft.Maui.Graphics;
 namespace FFImageLoading.MAUI
 {
 	[Preserve(AllMembers = true)]
-	[RenderWith(typeof(FFImageLoading.MAUI.Platform.CachedImageRenderer._CachedImageRenderer))]
+	[RenderWith(typeof(FFImageLoading.MAUI.CachedImageRenderer._CachedImageRenderer))]
 	/// <summary>
 	/// CachedImage by Daniel Luberda
 	/// </summary>

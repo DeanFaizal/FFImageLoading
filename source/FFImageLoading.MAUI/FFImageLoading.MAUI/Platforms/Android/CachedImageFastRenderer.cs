@@ -3,8 +3,6 @@ using System;
 using System.ComponentModel;
 using Microsoft.Maui;using Microsoft.Maui.Controls;
 using FFImageLoading.Work;
-using FFImageLoading.MAUI.Platform;
-using FFImageLoading.MAUI;
 using Android.Runtime;
 using Android.Graphics.Drawables;
 using Android.Graphics;
@@ -23,7 +21,7 @@ using Microsoft.Maui.Controls.Platform;
 using Microsoft.Maui.Graphics;
 using Color = Microsoft.Maui.Graphics.Color;
 
-namespace FFImageLoading.MAUI.Platform
+namespace FFImageLoading.MAUI
 {
     /// <summary>
     /// CachedImage Implementation

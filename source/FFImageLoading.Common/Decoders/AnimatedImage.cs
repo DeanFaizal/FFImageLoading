@@ -2,7 +2,7 @@
 
 namespace FFImageLoading
 {
-    internal class AnimatedImage<TNativeImageContainer> : IAnimatedImage<TNativeImageContainer>
+	public class AnimatedImage<TNativeImageContainer> : IAnimatedImage<TNativeImageContainer>
     {
         public TNativeImageContainer Image { get; set; }
 

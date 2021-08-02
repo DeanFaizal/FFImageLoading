@@ -162,6 +162,7 @@ Global
 		source\FFImageLoading.Svg.Forms.Shared\FFImageLoading.Svg.Forms.Shared.projitems*{cb1f7760-c8a6-40a3-9b90-f05628b62c2d}*SharedItemsImports = 5
 		source\FFImageLoading.Svg.Forms.Shared\FFImageLoading.Svg.Forms.Shared.projitems*{cca629e9-55e3-414a-91af-79a0cb845cd5}*SharedItemsImports = 4
 		source\FFImageLoading.Shared\FFImageLoading.Shared.projitems*{dcc22b65-c384-4101-b61b-1a8515d68f06}*SharedItemsImports = 5
+		source\FFImageLoading.Shared\FFImageLoading.Shared.projitems*{dd83e101-f5f6-4ce0-9043-88374e559bf3}*SharedItemsImports = 5
 		source\FFImageLoading.Shared\FFImageLoading.Shared.projitems*{e72ac4ed-03a8-465c-95a2-38b0544b37db}*SharedItemsImports = 13
 		source\FFImageLoading.Svg.Shared\FFImageLoading.Svg.Shared.projitems*{eaefdf02-e6bb-4acd-925a-f8bccd479da3}*SharedItemsImports = 4
 	EndGlobalSection

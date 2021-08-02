@@ -2,64 +2,36 @@
 
   <PropertyGroup>
     <!-- iOS, Android, MacCatalyst -->
-    <!--<TargetFrameworks>net6.0-android</TargetFrameworks>-->
-    <TargetFrameworks>net6.0-android;net6.0-ios;net6.0-maccatalyst</TargetFrameworks>
-    <AssemblyName>FFImageLoading.MAUI</AssemblyName>
-    <OutputType>library</OutputType>
+    <TargetFrameworks>net6.0-ios;net6.0-android;net6.0-maccatalyst</TargetFrameworks>
+    <OutputType>Library</OutputType>
     <UseMaui>true</UseMaui>
     <SingleProject>true</SingleProject>
-    <LangVersion>Latest</LangVersion>
+    <RootNamespace>FFImageLoading.MAUI</RootNamespace>
 
     <!-- Display name -->
-    <!--<ApplicationTitle>FFImageLoading.MAUI</ApplicationTitle>-->
+    <ApplicationTitle>MauiLibrary</ApplicationTitle>
 
     <!-- App Identifier -->
-    <!--<ApplicationId>com.companyname.FFImageLoading.MAUI</ApplicationId>-->
+    <ApplicationId>com.companyname.MauiLibrary</ApplicationId>
 
     <!-- Versions -->
-    <!--<ApplicationVersion>1.0</ApplicationVersion>
-		<AndroidVersionCode>1</AndroidVersionCode>-->
-    <AssemblyVersion>0.0.1</AssemblyVersion>
+    <ApplicationVersion>1.0</ApplicationVersion>
+    <AndroidVersionCode>1</AndroidVersionCode>
   </PropertyGroup>
+
 
   <PropertyGroup>
     <InvariantGlobalization Condition="$(TargetFramework.Contains('-maccatalyst'))">true</InvariantGlobalization>
     <RuntimeIdentifier Condition="$(TargetFramework.Contains('-ios'))">iossimulator-x64</RuntimeIdentifier>
     <RuntimeIdentifier Condition="$(TargetFramework.Contains('-maccatalyst'))">maccatalyst-x64</RuntimeIdentifier>
     <UseInterpreter Condition="$(TargetFramework.Contains('-android'))">False</UseInterpreter>
+    <RuntimeIdentifiers Condition="$(TargetFramework.Contains('-android'))">android-arm;android-arm64;android-x86;android-x64</RuntimeIdentifiers>
   </PropertyGroup>
 
   <ItemGroup>
-    <AtlasTexture Remove="Platforms\iOS - Copy\**" />
-    <BundleResource Remove="Platforms\iOS - Copy\**" />
-    <Compile Remove="Platforms\iOS - Copy\**" />
-    <CoreMLModel Remove="Platforms\iOS - Copy\**" />
-    <EmbeddedResource Remove="Platforms\iOS - Copy\**" />
-    <ImageAsset Remove="Platforms\iOS - Copy\**" />
-    <InterfaceDefinition Remove="Platforms\iOS - Copy\**" />
-    <MauiCss Remove="Platforms\iOS - Copy\**" />
-    <MauiXaml Remove="Platforms\iOS - Copy\**" />
-    <Metal Remove="Platforms\iOS - Copy\**" />
-    <None Remove="Platforms\iOS - Copy\**" />
-    <SceneKitAsset Remove="Platforms\iOS - Copy\**" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\..\FFImageLoading.Common\FFImageLoading.csproj" />
-    <ProjectReference Include="..\..\FFImageLoading.Droid\FFImageLoading.Droid.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <_MauiCompileToAdd Remove="Platforms\iOS - Copy\**" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <_MauiXamlToRemove Remove="Platforms\iOS - Copy\**" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Platforms\iOS\" />
-    <Folder Include="Platforms\MacCatalyst\" />
-  </ItemGroup>
+  <Import Project="..\..\FFImageLoading.Shared\FFImageLoading.Shared.projitems" Label="Shared" />
 
 </Project>

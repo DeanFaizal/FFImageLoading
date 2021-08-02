@@ -14,7 +14,7 @@ using Microsoft.Maui.Controls.Compatibility.Platform.Android;
 //[assembly: Xamarin.Forms.ExportImageSourceHandler(typeof(FFImageLoading.MAUI.EmbeddedResourceImageSource), typeof(FFImageLoading.MAUI.Platform.FFImageLoadingImageViewHandler))]
 //[assembly: Xamarin.Forms.ExportImageSourceHandler(typeof(FFImageLoading.MAUI.DataUrlImageSource), typeof(FFImageLoading.MAUI.Platform.FFImageLoadingImageViewHandler))]
 
-namespace FFImageLoading.MAUI.Platform
+namespace FFImageLoading.MAUI
 {
 	[Preserve(AllMembers = true)]
 	public class FFImageLoadingImageViewHandler : HandlerBase<ImageView>, IImageViewHandler

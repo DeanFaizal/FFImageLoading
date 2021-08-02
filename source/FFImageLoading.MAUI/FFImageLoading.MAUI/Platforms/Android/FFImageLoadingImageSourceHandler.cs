@@ -10,7 +10,7 @@ using FFImageLoading.Targets;
 using Microsoft.Maui.Controls.Compatibility.Platform.Android;
 using ImageSource = Microsoft.Maui.Controls.ImageSource;
 
-namespace FFImageLoading.MAUI.Platform
+namespace FFImageLoading.MAUI
 {
 	public class FFImageLoadingImageSourceHandler : HandlerBase<Context>, IImageSourceHandler
 	{

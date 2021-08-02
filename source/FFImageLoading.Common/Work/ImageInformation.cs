@@ -10,40 +10,40 @@ namespace FFImageLoading.Work
         {
         }
 
-        internal void SetCurrentSize(int width, int height)
+		public void SetCurrentSize(int width, int height)
         {
             CurrentWidth = width;
             CurrentHeight = height;
         }
 
-        internal void SetOriginalSize(int width, int height)
+		public void SetOriginalSize(int width, int height)
         {
             OriginalWidth = width;
             OriginalHeight = height;
         }
 
-        internal void SetPath(string path)
+		public void SetPath(string path)
         {
             Path = path;
         }
 
-        internal void SetFilePath(string filePath)
+		public void SetFilePath(string filePath)
         {
             FilePath = filePath;
         }
 
-        internal void SetKey(string cacheKey, string userCustomCacheKey)
+		public void SetKey(string cacheKey, string userCustomCacheKey)
         {
             CacheKey = cacheKey;
             UserCustomCacheKey = userCustomCacheKey;
         }
 
-        internal void SetType(ImageType type)
+		public void SetType(ImageType type)
         {
             Type = type;
         }
 
-        internal void SetExif(IList<Directory> exif)
+		public void SetExif(IList<Directory> exif)
         {
             Exif = exif;
         }
@@ -68,7 +68,7 @@ namespace FFImageLoading.Work
 
         public ImageType Type { get; private set; }
 
-        internal string BaseKey
+		public string BaseKey
         {
             get
             {

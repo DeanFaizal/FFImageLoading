@@ -2,7 +2,7 @@
 
 namespace FFImageLoading
 {
-    internal class DecodedImage<TNativeImageContainer> : IDecodedImage<TNativeImageContainer>
+	public class DecodedImage<TNativeImageContainer> : IDecodedImage<TNativeImageContainer>
     {
         public bool IsAnimated { get; set; }
 
