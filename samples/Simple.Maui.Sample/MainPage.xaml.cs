@@ -8,13 +8,20 @@ namespace Simple.Maui.Sample
 		public MainPage()
 		{
 			InitializeComponent();
+			var vm = new BasicPageModel();
+			vm.Reload();
+			BindingContext = vm;
 		}
 
-		int count = 0;
-		private void OnCounterClicked(object sender, EventArgs e)
+		public class BasicPageModel
 		{
-			count++;
-			CounterLabel.Text = $"Current count: {count}";
+			public void Reload()
+			{
+				// ImageUrl = Helpers.GetRandomImageUrl();
+				ImageUrl = @"https://raw.githubusercontent.com/recurser/exif-orientation-examples/master/Landscape_3.jpg";
+			}
+
+			public string ImageUrl { get; set; }
 		}
 	}
 }

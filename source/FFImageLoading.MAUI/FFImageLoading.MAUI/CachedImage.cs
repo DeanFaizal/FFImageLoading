@@ -1,5 +1,6 @@
 ﻿using System;
-using Microsoft.Maui;using Microsoft.Maui.Controls;
+using Microsoft.Maui;
+using Microsoft.Maui.Controls;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using FFImageLoading.MAUI.Args;
@@ -8,6 +9,8 @@ using FFImageLoading.Cache;
 using System.Reflection;
 using Microsoft.Maui.Essentials;
 using Microsoft.Maui.Graphics;
+using System.ComponentModel;
+using TypeConverterAttribute = System.ComponentModel.TypeConverterAttribute;
 
 namespace FFImageLoading.MAUI
 {
@@ -949,7 +952,7 @@ namespace FFImageLoading.MAUI
 					return;
 				}
 
-				var isWidthHeightRequestSet = widthRequest > 0 || heightRequest > 0; 
+				var isWidthHeightRequestSet = widthRequest > 0 || heightRequest > 0;
 
 				if (vect1 != null)
 				{
@@ -1077,7 +1080,7 @@ namespace FFImageLoading.MAUI
 		{
 			base.OnSizeAllocated(width, height);
 
-			if(_reloadBecauseOfMissingSize)
+			if (_reloadBecauseOfMissingSize)
 			{
 				_reloadBecauseOfMissingSize = false;
 
